@@ -3,7 +3,7 @@
 if [ -n "$1" ] ; then
     WL=$1
 else
-    WL=kevin-$(date +%s)
+    WL=$USER-$(date +%s)
 fi
 
 echo "Creating workload: $WL"
