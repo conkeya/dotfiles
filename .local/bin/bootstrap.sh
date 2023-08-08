@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
 
@@ -42,10 +42,15 @@ install-github-cli()
 	sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 	sudo apt update && sudo apt install gh -y
+	if ! gh auth status >/dev/null 2>&1; then
+		echo "Need to login into gh to continue"
+		gh auth login
+	fi
 }
 
 install-cube-cli()
 {
+	echo "right file"
 	type -p gh >/dev/null || install-github-cli
 	type -p gpg >/dev/null || install-common-packages
 	gh api -H 'Accept: application/vnd.github.raw' /repos/battellecube/cube-env/contents/KEY.gpg?ref=deb_repo | gpg --dearmor | sudo dd of=/usr/share/keyrings/cubeenvcli-archive-keyring.gpg
