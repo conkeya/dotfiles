@@ -13,11 +13,9 @@ cd ~
 git clone --bare git@github.com:YOUR_USERNAME/dotfiles ~/.dotfiles
 alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotgit checkout -f
+.local/bin/install-tools.sh
 ```
-To install all the required packages
-```sh
-./local/bin/install-tools.sh
-```
+
 To add changes to the repo you can use normal git functions with the dotgit command.
 
 
