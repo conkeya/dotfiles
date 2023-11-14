@@ -17,30 +17,3 @@ dotgit checkout -f
 ```
 
 To add changes to the repo you can use normal git functions with the dotgit command.
-
-
-## Grab these files and install the basics
-
-This will just add the necessary tools to the environment
-_NOTE: The `-f` will smash local files that exist in you dotfiles repo_
-
-```sh
-cd ~
-git clone --bare git@github.com:battellecube/dotfiles ~/.dotfiles
-alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
-dotgit checkout -f
-.local/bin/bootstrap.sh
-```
-## Make a new dotfiles repo from your current setup
-```sh
-git init --bare ~/.dotfiles
-alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-```
-
-Then use `dotgit` just like `git` to specifically manage dotfiles, e.g., you'll
-likely want to push this to GitHub.
-
-```
-dotgit remote add git@github.com:conkeya/dotfiles
-dotgit push -u origin main
-```
