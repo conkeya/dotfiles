@@ -6,7 +6,7 @@ Choose one of the following to put on your system.
 We suggest two options within this repo. The top suggestion is that you fork this repo to start your own set of dotfiles. The next suggestion is to just use this repo as a quick start to install tools.
 
 
-## Fork this repo onto your github account to create your own customization
+## Do This After WSL config
 
 ```sh
 cd ~
