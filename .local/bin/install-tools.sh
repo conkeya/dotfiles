@@ -27,14 +27,6 @@ install-terraform-cli()
 	sudo apt-get update && sudo apt-get install terraform -y
 }
 
-install-yq()
-{
-	type -p add-apt-repository >/dev/null || install-common-packages
-	sudo add-apt-repository -y ppa:rmescandon/yq
-	sudo apt update
-	sudo apt install yq -y
-}
-
 install-github-cli()
 {
 	type -p curl >/dev/null || install-common-packages
@@ -62,24 +54,8 @@ install-cube-cli()
 	sudo apt build-dep -y cube-env
 }
 
-install-nvm()
-{
-	type -p curl >/dev/null || install-common-packages
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-	export NVM_DIR="$HOME/.nvm"
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-	nvm install --lts
-	nvm install-latest-npm
-}
-
-
 install-common-packages
-install-yq
 install-github-cli
 install-terraform-cli
 install-azure-cli
-install-nvm
 install-cube-cli
-
-# setup-windows-terminal
-# echo -e "\n\nYou'll wants these fonts\n\thttps://github.com/powerline/fonts"

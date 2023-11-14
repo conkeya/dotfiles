@@ -10,13 +10,13 @@ We suggest two options within this repo. The top suggestion is that you fork thi
 
 ```sh
 cd ~
-git clone --bare git@github.com:{your github username}/dotfiles ~/.dotfiles
+git clone --bare git@github.com:YOUR_USERNAME/dotfiles ~/.dotfiles
 alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotgit checkout -f
 ```
 To install all the required packages
 ```sh
-./local/bin/bootstrap
+./local/bin/install-tools.sh
 ```
 To add changes to the repo you can use normal git functions with the dotgit command.
 
