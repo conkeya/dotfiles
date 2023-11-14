@@ -8,6 +8,8 @@ We suggest two options within this repo. The top suggestion is that you fork thi
 
 ## Do This After WSL config
 
+tar -xf /mnt/c/Users/CONKEYA\(US\)/OneDrive\ -\ Battelle/secrets.tar
+
 ```sh
 cd ~
 git clone --bare git@github.com:conkeya/dotfiles ~/.dotfiles
