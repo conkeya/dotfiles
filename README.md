@@ -10,7 +10,7 @@ We suggest two options within this repo. The top suggestion is that you fork thi
 
 ```sh
 cd ~
-git clone --bare git@github.com:YOUR_USERNAME/dotfiles ~/.dotfiles
+git clone --bare git@github.com:conkeya/dotfiles ~/.dotfiles
 alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotgit checkout -f
 .local/bin/install-tools.sh
@@ -41,6 +41,6 @@ Then use `dotgit` just like `git` to specifically manage dotfiles, e.g., you'll
 likely want to push this to GitHub.
 
 ```
-dotgit remote add git@github.com:<your_username>/dotfiles
+dotgit remote add git@github.com:conkeya/dotfiles
 dotgit push -u origin main
 ```
